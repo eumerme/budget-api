@@ -7,10 +7,10 @@ async function createBagde(req: Request, res: Response) {
 	const { id, productsIds }: BudgetSchema = res.locals;
 
 	try {
-		const budget = await budgetService.budget({ id, productsIds });
-		return res.status(httpStatus.OK).send(budget);
+		const total = await budgetService.budget({ id, productsIds });
+		return res.status(httpStatus.OK).send({ total });
 	} catch (error) {
-		return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
+		return res.sendStatus(error.response.status);
 	}
 }
 
