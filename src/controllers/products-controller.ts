@@ -7,7 +7,7 @@ async function getProducts(req: Request, res: Response) {
 		const products = await productsService.listProducts();
 		return res.status(httpStatus.OK).send(products);
 	} catch (error) {
-		return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
+		return res.sendStatus(error.response.status);
 	}
 }
 

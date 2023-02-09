@@ -1,12 +1,13 @@
 import axios from "axios";
+import { baseURL } from "../utils/baseUrl";
 
 async function fetchProducts(): Promise<Product[]> {
-	const res = await axios.get("https://mockend.com/juunegreiros/BE-test-api/products");
+	const res = await axios.get(`${baseURL}/products`);
 	return res.data;
 }
 
 async function fetchProductById(id: number): Promise<Product> {
-	const res = await axios.get(`https://mockend.com/juunegreiros/BE-test-api/products/${id}`);
+	const res = await axios.get(`${baseURL}/products/${id}`);
 	return res.data;
 }
 

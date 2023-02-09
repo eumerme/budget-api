@@ -1,12 +1,13 @@
 import axios from "axios";
+import { baseURL } from "../utils/baseUrl";
 
 async function fetchUsers(): Promise<User[]> {
-	const res = await axios.get("https://mockend.com/juunegreiros/BE-test-api/users");
+	const res = await axios.get(`${baseURL}/users`);
 	return res.data;
 }
 
 async function fetchUserById(id: number): Promise<User> {
-	const res = await axios.get(`https://mockend.com/juunegreiros/BE-test-api/users/${id}`);
+	const res = await axios.get(`${baseURL}/users/${id}`);
 	return res.data;
 }
 
