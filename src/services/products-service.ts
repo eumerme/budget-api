@@ -1,7 +1,12 @@
+import { Product } from "../utils/protocols";
 import { productsRepository } from "../repositories";
 
-async function listProducts() {
-	return await productsRepository.fetchProducts();
+async function listProducts(): Promise<Product[]> {
+	return productsRepository.fetchProducts();
 }
 
-export const productsService = { listProducts };
+async function listProductsById(productsIds: number[]): Promise<Product[]> {
+	return Promise.all(productsIds.map((id) => productsRepository.fetchProductById(id)));
+}
+
+export const productsService = { listProducts, listProductsById };

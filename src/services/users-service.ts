@@ -1,7 +1,12 @@
-import { User, usersRepository } from "../repositories";
+import { User } from "../utils/protocols";
+import { usersRepository } from "../repositories";
 
 async function listUsers(): Promise<User[]> {
-	return await usersRepository.fetchUsers();
+	return usersRepository.fetchUsers();
 }
 
-export const usersService = { listUsers };
+async function getUserById(id: number): Promise<User> {
+	return usersRepository.fetchUserById(id);
+}
+
+export const usersService = { listUsers, getUserById };

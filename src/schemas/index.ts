@@ -1,1 +1,1 @@
-export * from "./badge-schemas";
+export * from "./budget-schemas";
