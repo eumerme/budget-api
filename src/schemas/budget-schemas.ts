@@ -3,8 +3,8 @@ import { z } from "zod";
 export const budgetSchema = z
 	.object({
 		id: z.coerce.number().positive(),
-		productsIds: z.number().positive().array().nonempty(),
+		productsIds: z.number().positive().array().min(1),
 	})
 	.required();
 
-export type BudgetSchema = z.infer<typeof budgetSchema>;
+export type PostBudgetSchema = z.infer<typeof budgetSchema>;

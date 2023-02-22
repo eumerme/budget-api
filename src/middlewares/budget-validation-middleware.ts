@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status";
 import { z } from "zod";
-import { budgetSchema } from "../schemas";
+import { PostBudgetSchema, budgetSchema } from "../schemas";
 
 export function validateData(req: Request, res: Response, next: NextFunction) {
 	try {
-		const { id, productsIds } = budgetSchema.parse({
+		const { id, productsIds }: PostBudgetSchema = budgetSchema.parse({
 			id: req.params.id,
 			productsIds: req.body.productsIds,
 		});
