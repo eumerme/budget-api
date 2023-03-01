@@ -1,12 +1,12 @@
 import { User } from "../utils/protocols";
-import { usersRepository } from "../repositories";
+//import { usersRepository } from "../repositories";
 
-async function listUsers(): Promise<User[]> {
-	return usersRepository.fetchUsers();
+async function listUsers() {
+	//return usersRepository.fetchUsers();
 }
 
-async function getUserById(id: number): Promise<User> {
-	return usersRepository.fetchUserById(id);
+async function getUserById(id: number) {
+	//return usersRepository.fetchUserById(id);
 }
 
 export const usersService = { listUsers, getUserById };
