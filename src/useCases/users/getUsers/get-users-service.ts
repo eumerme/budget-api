@@ -4,7 +4,7 @@ import { UsersRepository } from "../../../repositories";
 export class GetUsersService {
 	constructor(private userRepository: UsersRepository) {}
 
-	execute(): Promise<User[]> {
+	async execute(): Promise<User[]> {
 		return this.userRepository.getAll();
 	}
 }

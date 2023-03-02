@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { getProducts } from "../controllers";
+import { getProductsController } from "../useCases/products/getProducts";
 
 const productsRouter = Router();
 
-productsRouter.get("/products", getProducts);
+productsRouter.get("/products", (req, res) => {
+	getProductsController.handle(req, res);
+});
 
 export { productsRouter };
