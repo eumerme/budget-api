@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { User } from "../../src/utils/protocols";
+import { User } from "../../src/models/User";
 
 export function user(): User {
 	return {

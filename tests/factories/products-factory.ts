@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Product } from "../../src/utils/protocols";
+import { Product } from "../../src/models/Product";
 
 export function products(): Product[] {
 	return [
