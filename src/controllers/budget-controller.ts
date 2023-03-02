@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import httpStatus from "http-status";
-import { PostBudgetSchema } from "../schemas";
 import { budgetService } from "../services";
 
 async function createBudget(req: Request, res: Response) {
-	const { id, productsIds }: PostBudgetSchema = res.locals;
+	const id = +req.params.id;
+	const { productsIds } = req.body;
 
 	try {
 		const total: number = await budgetService.budget({ id, productsIds });
