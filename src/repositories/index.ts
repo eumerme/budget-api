@@ -1,2 +1,2 @@
-export * from "./users-repository";
-export * from "./products-repository";
+export * from "./users/users-repository";
+export * from "./products/products-repository";
