@@ -1,10 +1,10 @@
 import { Product } from "../../../models/Product";
-import { IProductsRepository } from "../../../repositories/products/i-products-repository";
+import { GetProductByIdRepository } from "../../../repositories";
 
 export class GetProductsByIdService {
-	constructor(private productsRepository: IProductsRepository) {}
+	constructor(private getProductByIdRepository: GetProductByIdRepository) {}
 
 	async execute(productsIds: number[]): Promise<Product[]> {
-		return Promise.all(productsIds.map((id) => this.productsRepository.getById(id)));
+		return Promise.all(productsIds.map((id) => this.getProductByIdRepository.getById(id)));
 	}
 }
