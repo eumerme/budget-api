@@ -1,7 +1,7 @@
-import { UsersRepository } from "../../../repositories";
+import { GetAllUsersRepository } from "../../../repositories";
 import { GetUsersController } from "./get-users-controller";
 import { GetUsersService } from "./get-users-service";
 
-const usersRepository = new UsersRepository();
-const getUsersService = new GetUsersService(usersRepository);
+const getAllUsersRepository = new GetAllUsersRepository();
+const getUsersService = new GetUsersService(getAllUsersRepository);
 export const getUsersController = new GetUsersController(getUsersService);

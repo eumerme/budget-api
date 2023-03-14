@@ -1,4 +1,4 @@
-import { GetAllProductsRepository } from "../../../repositories/products/getAll/get-all-products-repository";
+import { GetAllProductsRepository } from "../../../repositories";
 import { GetProductsController } from "./get-products-controller";
 import { GetProductsService } from "./get-products-service";
 

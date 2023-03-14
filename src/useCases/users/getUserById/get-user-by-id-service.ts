@@ -1,10 +1,10 @@
 import { User } from "../../../models/User";
-import { IUsersRepository } from "../../../repositories/users/i-users-repository";
+import { IGetUserByIdRepository } from "../../../repositories";
 
 export class GetUserByIdService {
-	constructor(private usersRepository: IUsersRepository) {}
+	constructor(private getUserByIdRepository: IGetUserByIdRepository) {}
 
 	async execute(id: number): Promise<User> {
-		return this.usersRepository.getById(id);
+		return this.getUserByIdRepository.getById(id);
 	}
 }

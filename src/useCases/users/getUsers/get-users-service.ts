@@ -1,10 +1,10 @@
 import { User } from "../../../models/User";
-import { IUsersRepository } from "../../../repositories/users/i-users-repository";
+import { IGetAllUsersRepository } from "../../../repositories";
 
 export class GetUsersService {
-	constructor(private userRepository: IUsersRepository) {}
+	constructor(private getAllUsersRepository: IGetAllUsersRepository) {}
 
 	async execute(): Promise<User[]> {
-		return this.userRepository.getAll();
+		return this.getAllUsersRepository.getAll();
 	}
 }
