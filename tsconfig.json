@@ -1,12 +1,10 @@
 {
 	"compilerOptions": {
-		"target": "es2020",
-		"module": "CommonJS",
-		"outDir": "dist",
-		"noImplicitAny": true,
-		"esModuleInterop": true
-	},
-	"ts-node": {
-		"esm": true
+		"target": "es2022",
+		"module": "es2022",
+		"moduleResolution": "node",
+		"outDir": "./dist",
+		"esModuleInterop": true,
+		"noImplicitAny": true
 	}
 }

@@ -2,91 +2,105 @@
 
 Calculates the budget based on the selected user and the prices of the chosen products.
 
-[Installation Guide](#installation-guide) | 
+[Installation Guide](#installation-guide) |
 [How to Run](#how-to-run) |
 [Technologies](#technologies) |
 [API Endpoints](#api-endpoints)
 
 ## Installation Guide
-* Clone this repository
-* Run `npm i` to installl dependencies
+
+- Clone this repository
+- Run `npm i` to installl dependencies
 
 ## How to Run
+
 ### Locally
-* Run `npm run dev` to start the local server
+
+- Run `npm run dev` to start the local server
 
 ### Unit tests
-* Run `npm run test` to run the tests once
-* Run `npm run test:watch` to run the tests each time the code is saved
+
+- Run `npm run test` to run the tests once
+- Run `npm run test:watch` to run the tests each time the code is saved
 
 ## Technologies
+
 [![Technologies](https://skillicons.dev/icons?i=nodejs,express,ts,jest)](https://skillicons.dev)
 
 ## API Endpoints
-| HTTP Verbs | Endpoints | Action |
-| --- | --- | --- |
-| [GET](#get-users) | /users | List users |
-| [GET](#get-products) | /products | List products |
+
+| HTTP Verbs             | Endpoints   | Action                |
+| ---------------------- | ----------- | --------------------- |
+| [GET](#get-users)      | /users      | List users            |
+| [GET](#get-products)   | /products   | List products         |
 | [POST](#post-budgetid) | /budget/:id | Calculates the budget |
 
+---
 
-***
 ### `GET /users`
-### Request: 
+
+### Request:
+
 ```bash
 http://localhost:5000/users
 ```
+
 ### Response:
+
 ```json
 [
-  {
-  "id": 1,
-  "name": "user",
-  "tax": 79
-  },
+	{
+		"id": "number",
+		"name": "string",
+		"tax": "number"
+	}
 ]
 ```
-***
+
+---
+
 ### `GET /products`
-### Request: 
+
+### Request:
+
 ```bash
 http://localhost:5000/products
 ```
+
 ### Response:
+
 ```json
 [
-  {
-  "id": 1,
-  "name": "product",
-  "price": 6945
-  },
+	{
+		"id": "number",
+		"name": "string",
+		"price": "number"
+	}
 ]
 ```
-***
+
+---
+
 ### `POST /budget/:id`
+
 ### Request:
+
 ```bash
-http://localhost:5000/budget/1
-# 1 is the selected user id
+http://localhost:5000/budget/<userId>
 ```
-* body:
+
+- body:
+
 ```json
- {
-  "productsIds": [1, 6]
- }
+{
+	"productsIds": ["number"]
+}
 ```
+
 ### Response:
+
 ```json
-[
-  {
-  "id": 1,
-  "name": "product1",
-  "price": 6945
-  },
-  {
-  "id": 6,
-  "name": "product6",
-  "price": 1063
-  },
-]
+{
+	"total": "number"
+}
 ```
