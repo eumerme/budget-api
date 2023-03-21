@@ -1,7 +1,11 @@
 import { Product } from "../../../models/Product";
 import { GetProductsByIdService } from "../../products/getProductsById/get-products-by-id-service";
 import { GetUserByIdService } from "../../users/getUserById/get-user-by-id-service";
-import { ICreateBudget } from "./create-budget-controller";
+
+export interface ICreateBudget {
+	id: number;
+	productsIds: number[];
+}
 
 export class CreateBudgetService {
 	constructor(private getUserByIdService: GetUserByIdService, private getProductsByIdService: GetProductsByIdService) {}
